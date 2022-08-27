@@ -5,5 +5,6 @@ from django.contrib.auth import get_user_model
 
 def myclass(request):
     User = get_user_model()
-    classes = RecruitPost.objects.filter(user=User)
-    return render(request,'myclass.html', {'classes':classes})
+    classes = RecruitPost.objects.filter(user=request.user)
+    print(request.user)
+    return render(request,'myclass.html', {'classes': classes})
