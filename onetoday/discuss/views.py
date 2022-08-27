@@ -4,6 +4,7 @@ from django.db.models import Q
 
 from recruit.models import RecruitPost
 from myclass.models import Class
+from account.models import CustomUser
 
 # Create your views here.
 
@@ -19,6 +20,9 @@ def recommend(request, pk):
 def poll(request, gr_pk, cl_pk):
     group = get_object_or_404(RecruitPost, pk=gr_pk)
     votes = group.vote.get(pk=cl_pk)
-    if votes.vote_user.contain(request.user):
-        votes.vote_user.add(request.user)
+    user = get_object_or_404(CustomUser, pk=1)
+    if user not in votes.vote_user.all():
+        votes.vote_user.add(user)
+    else:
+        votes.vote_user.remove(user)
     return redirect('recommend', gr_pk)

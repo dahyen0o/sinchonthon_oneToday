@@ -30,5 +30,5 @@ urlpatterns = [
     path('recruit_detail/<int:post_id>', recruit_views.detail, name='detail'),
 
     path('discuss/<int:pk>', recommend, name='recommend'),
-    path('poll/<int:gr_pk>/<int:cl_pk>', poll, name='poll'),
+    path('poll/<int:gr_pk>/<int:cl_pk>', poll, name='poll'), #poll/그룹아이디/투표하는클래스아이디 #투표하기 url
 ]
