@@ -20,7 +20,8 @@
 				<div class="white-box-top-under"></div>
 				<div class="white-box">
 					<div class="white-box-inner">
-						<form>
+						<form method="post" action="{% url 'post' %}">
+                            {%csrf_token%}
 							<input id="name" class="title-input" placeholder="그룹 이름" />
 							<div class="border1"></div>
 							<textarea
@@ -63,8 +64,6 @@
 				<div class="modal-background"></div>
 				<div class="modal-wrapper-inner">
 					<div class="modal">
-                        <form action="{% url 'post' %}" method="post">
-                        {%csrf_token%}
 						<div class="inner-modal">
 							<div>
 								<div class="modal-title">취미를 선택해 주세요</div>
@@ -374,8 +373,7 @@
 								</select>
 							</div>
 						</div>
-						<input type="submit" class="submit-btn">적용하기</input>
-                        </form>
+						<div class="submit-btn">적용하기</div>
 					</div>
 				</div>
 			</div>

@@ -4,6 +4,9 @@ from .models import *
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_protect 
 
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
 # Create your views here.
 def mainlist(request):
     posts = RecruitPost.objects.filter().order_by('-created_at')
@@ -18,12 +21,13 @@ def post(request):
     if request.method == 'POST':
         recruit_post.user = request.user
         recruit_post.name = request.POST.get('name')
+        print(recruit_post.name)
         recruit_post.content = request.POST.get('content')
         recruit_post.start_date = request.POST.get('start_date')
-        recruit_post.finish_date = datetime.now + datetime.month
+        recruit_post.finish_date = datetime.today() + relativedelta(months=1)
         recruit_post.place = request.POST.get('place')
         recruit_post.category = request.POST.get('category')
-        recruit_post.total_people = request.POST.get('total_people')
+        recruit_post.total_people = 4
         #recruit_post.participants.add(get_user_model())
 
         start_date = recruit_post.start_date
@@ -67,7 +71,7 @@ def search(request):
             query |= Q(category=category)
 
         posts = RecruitPost.objects.filter(query)
-        
+
 
         return render(request, 'MainMorePage.html', {'posts': posts})
 
