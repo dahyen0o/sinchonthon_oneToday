@@ -13,8 +13,8 @@ def recommend(request, pk):
     start_date = group.start_date
     finish_date = group.finish_date
     classes = Class.objects.filter(type=group.category, place=group.place).filter(date__range=[start_date, finish_date])
-
-    return render(request, 'hy.html', {'filtered_classes' : classes, 'group': group})
+    participants = group.participants.all()
+    return render(request, 'hy.html', {'filtered_classes' : classes, 'group': group, 'participants' : participants})
 
 
 def poll(request, gr_pk, cl_pk):
