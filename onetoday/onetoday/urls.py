@@ -20,10 +20,10 @@ from discuss import views as discuss_views
 from myclass import views as myclass_views
 from recruit import views as recruit_views
 
+from discuss.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('', recruit_views.mainlist, name='mainlist'),
-    path('recruit_post/', recruit_views.post, name='post'),
-    path('recruit_detail/', recruit_views.detail, name='detail'),
+    path('discuss/<int:pk>', recommend, name='recommend'),
+    path('poll/<int:gr_pk>/<int:cl_pk>', poll, name='poll'),
 ]
