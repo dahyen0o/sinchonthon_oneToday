@@ -11,4 +11,4 @@ def myclass(request):
         participants = post.participants.all()
         if request.user in participants and post not in groups:
             groups.add(post)
-    return render(request,'myclass.html', {'groups': groups})
+    return render(request,'GroupPage.html', {'groups': groups})
