@@ -22,34 +22,57 @@
 		</div>
 
 		<div class="groupstart-container">
-			<p><span class="bold-text">{{ user.username }}</span>님의 그룹</p>
+			<span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
+			<span><span class="bold-text">{{ user.username }}</span>님의 그룹</span>
 		</div>
 		<div class="groups">
 			{% for group in groups %}
-			<a href="{% url 'recommend' group.id %}">
+			<a href="{% url 'recommend' group.id %}" style="text-decoration: none;">
 				<div class="group-card">
 					<p class="bold-text group-name">{{group.name}}</p>
 					<div class="tags">
-						<span class="tag"># {{group.category}}</span>
-						<span class="tag"># {{group.category}}</span>
-						<span class="tag"># &nbsp &nbsp &nbsp</span>
-						<span class="tag"># &nbsp &nbsp &nbsp</span>
+						<span class="tag">#{{group.category}}</span>
+						<span class="tag">#{{group.category}}</span>
+						<span class="tag">#{{group.place}}</span>
+						<span class="tag">#{{group.place}}</span>
+						<span class="tag">#{{group.total_people}}명</span>
 						<br />
 						<br />
-						<p class="content">{{group.content}}</p>
-						<p class="content">{{group.content}}</p>
+						<span class="condition">{{group.start_date}} - {{group.finish_date}}</span>
+						<span class="condition">{{group.place}}</span>
+						<span class="condition">{{group.category}}</span>
 						<div class="members-container">
-							<img class="member" src="{% static 'img/MemberImg.svg' %}">
-							<img class="member" src="{% static 'img/MemberImg.svg' %}">
-							<img class="member" src="{% static 'img/MemberImg.svg' %}">
+							<div class="detail_member">
+								<img src="{% static 'img/Woman1.svg' %}" style="margin-bottom: 0px;" />
+								<p class="bold-text name">거은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Woman2.svg' %}" />
+								<p class="bold-text name">나은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Man1.svg' %}" />
+								<p class="bold-text name">다은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Woman3.svg' %}" />
+								<p class="bold-text name">라은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Man1.svg' %}" />
+								<p class="bold-text name">다은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Woman2.svg' %}" />
+								<p class="bold-text name">라은</p>
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</a>
 			{% endfor %}
 		</div>
-
-	</div>
 	</div>
 </body>
 
