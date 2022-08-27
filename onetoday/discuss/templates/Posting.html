@@ -1,24 +1,26 @@
 {%load static%}
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>onetoday</title>
-        <link rel="stylesheet" href="{% static 'css/GroupPage.css' %}" />
-    </head>
-    
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onetoday</title>
+    <link rel="stylesheet" href="{% static 'css/GroupPage.css' %}" />
+</head>
+
 <body>
     <div class="container" style="height: 100vh;">
         <img src="{% static 'img/Background.svg' %}" class="background-img" />
         <div class="header-container">
-            <img src="{% static 'img/Logo.svg' %}" class="logo-img" />
+            <a href="{% url 'mainlist' %}">
+                <img src="{% static 'img/Logo.svg' %}" class="logo-img" /></a>
             <img src="{% static 'img/Profile.svg' %}" class="profile-img" />
         </div>
         <div class="Back-container">
             <a href="{% url 'board' pk %}">
-                <img src="{% static 'img/Backkey.svg' %}" class="backkey-img"/>
+                <img src="{% static 'img/Backkey.svg' %}" class="backkey-img" />
             </a>
         </div>
 
@@ -37,8 +39,10 @@
                     <span class="discount_tag" style="border-radius: 3px; margin-left: 5px; font-size: 7px;">new</span>
                     <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
                 </div>
-                <hr/>
-                <p class="posting_content">게시판 글입니다. 게시판 글입니다. 게시판 글입니다. 게시판 글입니다. 에드거 앨런 포(영어: Edgar Allan Poe, 1809년 1월 19일 ~ 1849년 10월 7일)는 미국의 작가·시인·편집자·문학평론가이다. 미국 낭만주의의 거두이자 미국 문학사 전체적으로 매우 중요하게 취급되는 작가이다. 미스터리 및 마카브레 작품들로 가장 유명하며, 미국 단편 소설의 선구자이기도 하다.</p>
+                <hr />
+                <p class="posting_content">게시판 글입니다. 게시판 글입니다. 게시판 글입니다. 게시판 글입니다. 에드거 앨런 포(영어: Edgar Allan Poe, 1809년
+                    1월 19일 ~ 1849년 10월 7일)는 미국의 작가·시인·편집자·문학평론가이다. 미국 낭만주의의 거두이자 미국 문학사 전체적으로 매우 중요하게 취급되는 작가이다. 미스터리 및
+                    마카브레 작품들로 가장 유명하며, 미국 단편 소설의 선구자이기도 하다.</p>
             </div>
 
             <!-- 댓글 -->
@@ -46,61 +50,65 @@
                 <!-- 댓글 1 -->
                 <div class="comment">
                     <div class="comment_profile">
-                        <img src="{% static 'img/Woman1.svg' %}" style="margin-bottom: 0px;"/>
+                        <img src="{% static 'img/Woman1.svg' %}" style="margin-bottom: 0px;" />
                         <p class="bold-text name">가은</p>
                     </div>
                     <div class="bubble_container">
-                    <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}" style="width: 100%;"/></div>
-                    <div class="comment_content">
-                        <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br/>
-                            게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}"
+                                style="width: 100%;" /></div>
+                        <div class="comment_content">
+                            <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br />
+                                게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        </div>
                     </div>
-                    </div>                 
                 </div>
 
                 <!-- 댓글 2 -->
                 <div class="comment">
                     <div class="comment_profile">
-                        <img src="{% static 'img/Woman2.svg' %}" style="margin-bottom: 0px;"/>
+                        <img src="{% static 'img/Woman2.svg' %}" style="margin-bottom: 0px;" />
                         <p class="bold-text name">나은</p>
                     </div>
                     <div class="bubble_container">
-                    <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}" style="width: 100%;"/></div>
-                    <div class="comment_content">
-                        <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br/>
-                            게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}"
+                                style="width: 100%;" /></div>
+                        <div class="comment_content">
+                            <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br />
+                                게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        </div>
                     </div>
-                    </div>                   
                 </div>
 
                 <!-- 댓글 3 -->
                 <div class="comment">
                     <div class="comment_profile">
-                        <img src="{% static 'img/Man1.svg' %}" style="margin-bottom: 0px;"/>
+                        <img src="{% static 'img/Man1.svg' %}" style="margin-bottom: 0px;" />
                         <p class="bold-text name">다은</p>
                     </div>
                     <div class="bubble_container">
-                    <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}" style="width: 100%;"/></div>
-                    <div class="comment_content">
-                        <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br/>
-                            게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}"
+                                style="width: 100%;" /></div>
+                        <div class="comment_content">
+                            <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br />
+                                게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        </div>
                     </div>
-                    </div>                   
                 </div>
 
                 <!-- 댓글 4 -->
                 <div class="comment">
                     <div class="comment_profile">
-                        <img src="{% static 'img/Woman3.svg' %}" style="margin-bottom: 0px;"/>
+                        <img src="{% static 'img/Woman3.svg' %}" style="margin-bottom: 0px;" />
                         <p class="bold-text name">라은</p>
                     </div>
                     <div class="bubble_container">
-                    <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}" style="width: 100%;"/></div>
-                    <div class="comment_content">
-                        <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br/>
-                            게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        <div class="img_div"><img class="bubble" src="{% static 'img/speech_bubble.png' %}"
+                                style="width: 100%;" /></div>
+                        <div class="comment_content">
+                            <p style="line-height: 1.5;">게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.<br />
+                                게시판 댓글입니다. 게시판 댓글입니다. 게시판 댓글입니다.</p>
+                        </div>
                     </div>
-                    </div>                   
                 </div>
             </div>
 
@@ -109,4 +117,5 @@
 
     </div>
 </body>
+
 </html>

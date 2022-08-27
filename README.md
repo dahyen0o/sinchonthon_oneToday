@@ -1,5 +1,5 @@
-# sinchonthon_onetoday_BE
+# OneToday
 
-다음 파일/폴더 제외하고 업로드
+원데이 클래스 커뮤니티 <br/>
 
-: pycache, migrations, dbsqlite
+![image](https://user-images.githubusercontent.com/64001680/187050805-8c0cdf13-666f-41d8-b34d-a77c51b10d5c.png)
