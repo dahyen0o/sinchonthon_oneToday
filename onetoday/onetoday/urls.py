@@ -32,4 +32,6 @@ urlpatterns = [
     path('poll/<int:gr_pk>/<int:cl_pk>', discuss_views.poll, name='poll'),
 
     path('myclass/', myclass_views.myclass, name='myclass'),
+
+    path('postform/',recruit_views.postform, name='postform'),
 ]
