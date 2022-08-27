@@ -48,9 +48,8 @@ def detail(request, post_id):
 # MainMorePage 에서 검색
 def search(request):
     if request.method == 'POST':
-        place_list = request.GET.getlist('place_list')
-        print(place_list)
-        # category_list = request.GET.getlist('category_list')
+        place_list = request.POST.getlist('place_list')
+        category_list = request.POST.getlist('category_list')
 
         query = Q()
         for i, place in enumerate(place_list):
@@ -59,8 +58,8 @@ def search(request):
             else:
                 query |= Q(place=place)
 
-        # for i, category in enumerate(category_list):
-        #     query |= Q(category=category)
+        for i, category in enumerate(category_list):
+            query |= Q(category=category)
 
         posts = RecruitPost.objects.filter(query)
         
