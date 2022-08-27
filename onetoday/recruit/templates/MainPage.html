@@ -64,11 +64,9 @@
 											</div>
 										</div>
 										<div style="margin-top: 7px; display: flex">
-											<div>
+											<div>{%for member in post.participants.all%}
 												<img src="{% static 'img/Profile1.svg' %}" class="group-profile-img" />
-												<img src="{% static 'img/Profile2.svg' %}" class="group-profile-img" />
-												<img src="{% static 'img/Profile3.svg' %}" class="group-profile-img" />
-												<img src="{% static 'img/Profile4.svg' %}" class="group-profile-img" />
+												{% endfor %}
 											</div>
 											<div class="group-dot-container">
 												<div class="dot-container">

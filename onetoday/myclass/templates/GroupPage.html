@@ -42,30 +42,12 @@
 						<span class="condition">{{group.place}}</span>
 						<span class="condition">{{group.category}}</span>
 						<div class="members-container">
+							{%for member in group.participants.all%}
 							<div class="detail_member">
 								<img src="{% static 'img/Woman1.svg' %}" style="margin-bottom: 0px;" />
-								<p class="bold-text name">거은</p>
+								<p class="bold-text name">{{member.username}}</p>
 							</div>
-							<div class="detail_member">
-								<img src="{% static 'img/Woman2.svg' %}" />
-								<p class="bold-text name">나은</p>
-							</div>
-							<div class="detail_member">
-								<img src="{% static 'img/Man1.svg' %}" />
-								<p class="bold-text name">다은</p>
-							</div>
-							<div class="detail_member">
-								<img src="{% static 'img/Woman3.svg' %}" />
-								<p class="bold-text name">라은</p>
-							</div>
-							<div class="detail_member">
-								<img src="{% static 'img/Man1.svg' %}" />
-								<p class="bold-text name">다은</p>
-							</div>
-							<div class="detail_member">
-								<img src="{% static 'img/Woman2.svg' %}" />
-								<p class="bold-text name">라은</p>
-							</div>
+							{% endfor %}
 						</div>
 
 					</div>
