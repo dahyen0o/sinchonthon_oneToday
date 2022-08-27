@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="stylesheet" href="{% static 'css/GroupPage.css' %}" />
+
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'img/Background.svg' %}" class="background-img" />
+        <div class="header-container">
+            <img src="{% static 'img/Logo.svg' %}" class="logo-img" />
+            <img src="{% static 'img/Profile.svg' %}" class="profile-img" />
+        </div>
+        <div class="Back-container">
+            <a href="{% url 'recommend' pk %}">
+                <img src="{% static 'img/Backkey.svg' %}" class="backkey-img"/>
+            </a>
+        </div>
+
+        <!-- 그룹게시판 -->
+        <div class="group_board">
+            <div class="title">
+                <span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
+                <span class="bold-text" style="font-size: 16px; margin-top: 5%;">그룹 게시판</span>
+            </div>
+            <a href="{% url 'posting' pk %}" style="text-decoration: none; color: black">
+                <div style="margin-top: 20%;">
+                <span class="board_title">게시판 제목입니다. 게시판 제목입니다.</span>
+                <span class="discount_tag" style="border-radius: 3px; margin-left: 10px; font-size: 7px;">new</span>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+            </a>
+            <hr/>
+            <a href="{% url 'posting' pk %}" style="text-decoration: none; color: black">
+            <div>
+                <span class="board_title">게시판 제목입니다. 게시판 제목입니다.</span>
+                <span class="discount_tag" style="border-radius: 3px; margin-left: 10px; font-size: 7px;">new</span>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+            </a>
+            <hr/>
+            <a href="{% url 'posting' pk %}" style="text-decoration: none; color: black">
+            <div>
+                <p class="board_title">게시판 제목입니다. 게시판 제목입니다.</p>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+            </a>
+            <hr/>
+            <a href="{% url 'posting' pk %}" style="text-decoration: none; color: black">
+            <div>
+                <p class="board_title">게시판 제목입니다. 게시판 제목입니다.</p>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+            </a>
+            <hr/>
+            <a href="{% url 'posting' pk %}" style="text-decoration: none; color: black">
+            <div>
+                <p class="board_title">게시판 제목입니다. 게시판 제목입니다.</p>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+            </a>
+            <hr/>
+            <a href="{% url 'posting' pk %}" style="text-decoration: none; color: black">
+            <div>
+                <p class="board_title">게시판 제목입니다. 게시판 제목입니다.</p>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+            </a>
+            <hr/>
+        </div>
+
+    </div>
+</body>
+</html>

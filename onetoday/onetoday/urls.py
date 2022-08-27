@@ -28,10 +28,13 @@ urlpatterns = [
     path('more/', recruit_views.search, name='search'),
 
     path('recruit_post/', recruit_views.post, name='post'),
-    path('recruit_detail/<int:post_id>', recruit_views.detail, name='detail'),
+    path('recruit_detail/<int:post_id>/', recruit_views.detail, name='detail'),
 
-    path('discuss/<int:pk>', discuss_views.recommend, name='recommend'),
-    path('poll/<int:gr_pk>/<int:cl_pk>', discuss_views.poll, name='poll'),
+    path('discuss/<int:pk>/', discuss_views.recommend, name='recommend'),
+    path('board/<int:pk>/', discuss_views.board, name='board'),
+    path('posting/<int:pk>/', discuss_views.posting, name='posting'),
+
+    path('poll/<int:gr_pk>/<int:cl_pk>/', discuss_views.poll, name='poll'),
 
     path('myclass/', myclass_views.myclass, name='myclass'),
 

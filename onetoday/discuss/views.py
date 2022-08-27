@@ -16,6 +16,11 @@ def recommend(request, pk):
     participants = group.participants.all()
     return render(request, 'GroupDetail.html', {'filtered_classes' : classes, 'group': group, 'participants' : participants})
 
+def board(request, pk):
+    return render(request, 'Board.html', {'pk':pk})
+
+def posting(request, pk):
+    return render(request, 'Posting.html', {'pk':pk})
 
 def poll(request, gr_pk, cl_pk):
     group = get_object_or_404(RecruitPost, pk=gr_pk)
