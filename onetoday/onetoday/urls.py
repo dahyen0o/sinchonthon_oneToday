@@ -25,6 +25,8 @@ from discuss.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', recruit_views.mainlist, name='mainlist'),
+    path('more/', recruit_views.search, name='search'),
+
     path('recruit_post/', recruit_views.post, name='post'),
     path('recruit_detail/<int:post_id>', recruit_views.detail, name='detail'),
 

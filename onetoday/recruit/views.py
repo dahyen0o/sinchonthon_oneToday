@@ -45,18 +45,28 @@ def detail(request, post_id):
     else:
         return render(request, 'detail.html', {'detail': get_object_or_404(RecruitPost, pk=post_id)})
 
+# MainMorePage 에서 검색
 def search(request):
     if request.method == 'POST':
         place_list = request.GET.getlist('place_list')
-        category_list = request.GET.getlist('category_list')
+        print(place_list)
+        # category_list = request.GET.getlist('category_list')
 
         query = Q()
         for i, place in enumerate(place_list):
-            query |= Q(place=place)
+            if i == 0:
+                query = query & Q(place=place)
+            else:
+                query |= Q(place=place)
 
-        for i, category in enumerate(category_list):
-            query |= Q(category=category)
+        # for i, category in enumerate(category_list):
+        #     query |= Q(category=category)
 
-        result = RecruitPost.objects.filter(query)
+        posts = RecruitPost.objects.filter(query)
+        
 
-        return render(request, '', {'result': result})
+        return render(request, 'MainMorePage.html', {'posts': posts})
+
+    else:
+        posts = RecruitPost.objects.filter().order_by('-created_at')
+        return render(request, 'MainMorePage.html', {'posts':posts})

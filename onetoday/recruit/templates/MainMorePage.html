@@ -27,6 +27,7 @@
 						<div class="title-text">Today new group</div>
 					</div>
 				</div>
+
 				<div class="filter-container">
 					<img src="{% static 'img/FilterIcon.svg' %}" class="filter-img" />
 					<div class="fill-btn modal-btn">
@@ -86,316 +87,320 @@
 		<div class="modal-background"></div>
 		<div class="modal-wrapper-inner">
 			<div class="modal">
-				<div class="inner-modal">
-					<div>
-						<div class="modal-title">취미를 선택해 주세요</div>
-						<div class="modal-subtitle">(다중 선택 가능)</div>
-					</div>
-				</div>
-				<div class="hobby-wrapper">
-					<div class="hobby-circle-flex">
+				<form method="post" action="{% url 'search'  %}">
+					{% csrf_token %}
+					<div class="inner-modal">
 						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby1.svg' %}" class="hobby-img" />
-							</div>
-							<div class="hobby-text">요리</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby2.svg' %}" class="hobby-img" />
-							</div>
-							<div class="hobby-text">수공예</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby3.svg' %}" class="hobby-img" />
-							</div>
-							<div class="hobby-text">플라워</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby4.svg' %}" class="hobby-img" />
-							</div>
-							<div class="hobby-text">미술</div>
+							<div class="modal-title">취미를 선택해 주세요</div>
+							<div class="modal-subtitle">(다중 선택 가능)</div>
 						</div>
 					</div>
-					<div class="hobby-circle-flex">
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby5.svg' %}" class="hobby-img" />
+					<div class="hobby-wrapper">
+						<div class="hobby-circle-flex">
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby1.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">요리</div>
 							</div>
-							<div class="hobby-text">액티비티</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby6.svg' %}" class="hobby-img" />
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby2.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">수공예</div>
 							</div>
-							<div class="hobby-text">뷰티</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby7.svg' %}" class="hobby-img" />
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby3.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">플라워</div>
 							</div>
-							<div class="hobby-text">모임</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby8.svg' %}" class="hobby-img" />
-							</div>
-							<div class="hobby-text">정규</div>
-						</div>
-					</div>
-					<div class="hobby-circle-flex">
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby9.svg' %}" class="hobby-img" />
-							</div>
-							<div class="hobby-text">음악</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby10.sv' %}g" class="hobby-img" />
-							</div>
-							<div class="hobby-text">
-								라이프 <br />
-								스타일
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby4.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">미술</div>
 							</div>
 						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby11.sv' %}g" class="hobby-img" />
+						<div class="hobby-circle-flex">
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby5.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">액티비티</div>
 							</div>
-							<div class="hobby-text">키즈</div>
-						</div>
-						<div>
-							<div class="hobby-circle">
-								<img src="{% static 'img/hobby/Hobby12.sv' %}g" class="hobby-img" />
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby6.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">뷰티</div>
 							</div>
-							<div class="hobby-text">DIY</div>
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby7.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">모임</div>
+							</div>
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby8.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">정규</div>
+							</div>
+						</div>
+						<div class="hobby-circle-flex">
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby9.svg' %}" class="hobby-img" />
+								</div>
+								<div class="hobby-text">음악</div>
+							</div>
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby10.sv' %}g" class="hobby-img" />
+								</div>
+								<div class="hobby-text">
+									라이프 <br />
+									스타일
+								</div>
+							</div>
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby11.sv' %}g" class="hobby-img" />
+								</div>
+								<div class="hobby-text">키즈</div>
+							</div>
+							<div>
+								<div class="hobby-circle">
+									<img src="{% static 'img/hobby/Hobby12.sv' %}g" class="hobby-img" />
+								</div>
+								<div class="hobby-text">DIY</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="inner-modal">
-					<div>
-						<div class="modal-title">지역을 선택해 주세요</div>
-						<div class="modal-subtitle">(다중 선택 가능)</div>
+					<div class="inner-modal">
+						<div>
+							<div class="modal-title">지역을 선택해 주세요</div>
+							<div class="modal-subtitle">(다중 선택 가능)</div>
+						</div>
 					</div>
-				</div>
-				<div class="checkbox-wrapper">
-					<div class="checkbox-container">
-						<label>마포구</label>
-						<input id="place" value="마포구" type="checkbox" />
+					<div class="checkbox-wrapper">
+						<div class="checkbox-container">
+							<label>마포구</label>
+							<input value="마포구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>강남구</label>
+							<input value="강남구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>용산구</label>
+							<input value="용산구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>종로구</label>
+							<input value="종로구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>성동구</label>
+							<input value="성동구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>중구</label>
+							<input value="중구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>서대문구</label>
+							<input value="서대문구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>송파구</label>
+							<input value="송파구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>영등포구</label>
+							<input value="영등포구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>서초구</label>
+							<input value="서초구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>성북구</label>
+							<input value="성북구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>은평구</label>
+							<input value="은평구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>광진구</label>
+							<input value="광진구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>강서구</label>
+							<input value="강서구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>관악구</label>
+							<input value="관악구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>강동구</label>
+							<input value="강동구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>강북구</label>
+							<input value="강북구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>동대문구</label>
+							<input value="동대문구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>동작구</label>
+							<input value="동작구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>금천구</label>
+							<input value="금천구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>중랑구</label>
+							<input value="중랑구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>노원구</label>
+							<input value="노원구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>양천구</label>
+							<input value="양천구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>도봉구</label>
+							<input value="도봉구" type="checkbox" name="place_list" />
+						</div>
+						<div class="checkbox-container">
+							<label>구로구</label>
+							<input value="구로구" type="checkbox" name="place_list" />
+						</div>
 					</div>
-					<div class="checkbox-container">
-						<label>강남구</label>
-						<input id="place" value="강남구" type="checkbox" />
+					<div class="inner-modal">
+						<div>
+							<div class="modal-title">기간을 선택해 주세요</div>
+							<div class="modal-subtitle">2022년 8월 28일</div>
+						</div>
 					</div>
-					<div class="checkbox-container">
-						<label>용산구</label>
-						<input id="place" value="용산구" type="checkbox" />
+					<div class="date-wrapper">
+						<div class="date-line">
+							<div class="date-title">시작일 :</div>
+							<select>
+								<option selected disabled>월</option>
+								<option>1월</option>
+								<option>2월</option>
+								<option>3월</option>
+								<option>4월</option>
+								<option>5월</option>
+								<option>6월</option>
+								<option>7월</option>
+								<option>8월</option>
+								<option>9월</option>
+								<option>10월</option>
+								<option>11월</option>
+								<option>12월</option>
+							</select>
+							<select>
+								<option selected disabled>일</option>
+								<option>1일</option>
+								<option>2일</option>
+								<option>3일</option>
+								<option>4일</option>
+								<option>5일</option>
+								<option>6일</option>
+								<option>7일</option>
+								<option>8일</option>
+								<option>9일</option>
+								<option>10일</option>
+								<option>11일</option>
+								<option>12일</option>
+								<option>13일</option>
+								<option>14일</option>
+								<option>15일</option>
+								<option>16일</option>
+								<option>17일</option>
+								<option>18일</option>
+								<option>19일</option>
+								<option>20일</option>
+								<option>21일</option>
+								<option>22일</option>
+								<option>23일</option>
+								<option>24일</option>
+								<option>25일</option>
+								<option>26일</option>
+								<option>27일</option>
+								<option>28일</option>
+								<option>29일</option>
+								<option>30일</option>
+								<option>31일</option>
+							</select>
+						</div>
+						<div class="date-line">
+							<div class="date-title">종료일 :</div>
+							<select>
+								<option selected disabled>월</option>
+								<option>1월</option>
+								<option>2월</option>
+								<option>3월</option>
+								<option>4월</option>
+								<option>5월</option>
+								<option>6월</option>
+								<option>7월</option>
+								<option>8월</option>
+								<option>9월</option>
+								<option>10월</option>
+								<option>11월</option>
+								<option>12월</option>
+							</select>
+							<select>
+								<option selected disabled>일</option>
+								<option>1일</option>
+								<option>2일</option>
+								<option>3일</option>
+								<option>4일</option>
+								<option>5일</option>
+								<option>6일</option>
+								<option>7일</option>
+								<option>8일</option>
+								<option>9일</option>
+								<option>10일</option>
+								<option>11일</option>
+								<option>12일</option>
+								<option>13일</option>
+								<option>14일</option>
+								<option>15일</option>
+								<option>16일</option>
+								<option>17일</option>
+								<option>18일</option>
+								<option>19일</option>
+								<option>20일</option>
+								<option>21일</option>
+								<option>22일</option>
+								<option>23일</option>
+								<option>24일</option>
+								<option>25일</option>
+								<option>26일</option>
+								<option>27일</option>
+								<option>28일</option>
+								<option>29일</option>
+								<option>30일</option>
+								<option>31일</option>
+							</select>
+						</div>
 					</div>
-					<div class="checkbox-container">
-						<label>종로구</label>
-						<input id="place" value="종로구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>성동구</label>
-						<input id="place" value="성동구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>중구</label>
-						<input id="place" value="중구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>서대문구</label>
-						<input id="place" value="서대문구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>송파구</label>
-						<input id="place" value="송파구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>영등포구</label>
-						<input id="place" value="영등포구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>서초구</label>
-						<input id="place" value="서초구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>성북구</label>
-						<input id="place" value="성북구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>은평구</label>
-						<input id="place" value="은평구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>광진구</label>
-						<input id="place" value="광진구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>강서구</label>
-						<input id="place" value="강서구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>관악구</label>
-						<input id="place" value="관악구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>강동구</label>
-						<input id="place" value="강동구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>강북구</label>
-						<input id="place" value="강북구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>동대문구</label>
-						<input id="place" value="동대문구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>동작구</label>
-						<input id="place" value="동작구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>금천구</label>
-						<input id="place" value="금천구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>중랑구</label>
-						<input id="place" value="중랑구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>노원구</label>
-						<input id="place" value="노원구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>양천구</label>
-						<input id="place" value="양천구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>도봉구</label>
-						<input id="place" value="도봉구" type="checkbox" />
-					</div>
-					<div class="checkbox-container">
-						<label>구로구</label>
-						<input id="place" value="구로구" type="checkbox" />
-					</div>
-				</div>
-				<div class="inner-modal">
-					<div>
-						<div class="modal-title">기간을 선택해 주세요</div>
-						<div class="modal-subtitle">2022년 8월 28일</div>
-					</div>
-				</div>
-				<div class="date-wrapper">
-					<div class="date-line">
-						<div class="date-title">시작일 :</div>
-						<select>
-							<option selected disabled>월</option>
-							<option>1월</option>
-							<option>2월</option>
-							<option>3월</option>
-							<option>4월</option>
-							<option>5월</option>
-							<option>6월</option>
-							<option>7월</option>
-							<option>8월</option>
-							<option>9월</option>
-							<option>10월</option>
-							<option>11월</option>
-							<option>12월</option>
-						</select>
-						<select>
-							<option selected disabled>일</option>
-							<option>1일</option>
-							<option>2일</option>
-							<option>3일</option>
-							<option>4일</option>
-							<option>5일</option>
-							<option>6일</option>
-							<option>7일</option>
-							<option>8일</option>
-							<option>9일</option>
-							<option>10일</option>
-							<option>11일</option>
-							<option>12일</option>
-							<option>13일</option>
-							<option>14일</option>
-							<option>15일</option>
-							<option>16일</option>
-							<option>17일</option>
-							<option>18일</option>
-							<option>19일</option>
-							<option>20일</option>
-							<option>21일</option>
-							<option>22일</option>
-							<option>23일</option>
-							<option>24일</option>
-							<option>25일</option>
-							<option>26일</option>
-							<option>27일</option>
-							<option>28일</option>
-							<option>29일</option>
-							<option>30일</option>
-							<option>31일</option>
-						</select>
-					</div>
-					<div class="date-line">
-						<div class="date-title">종료일 :</div>
-						<select>
-							<option selected disabled>월</option>
-							<option>1월</option>
-							<option>2월</option>
-							<option>3월</option>
-							<option>4월</option>
-							<option>5월</option>
-							<option>6월</option>
-							<option>7월</option>
-							<option>8월</option>
-							<option>9월</option>
-							<option>10월</option>
-							<option>11월</option>
-							<option>12월</option>
-						</select>
-						<select>
-							<option selected disabled>일</option>
-							<option>1일</option>
-							<option>2일</option>
-							<option>3일</option>
-							<option>4일</option>
-							<option>5일</option>
-							<option>6일</option>
-							<option>7일</option>
-							<option>8일</option>
-							<option>9일</option>
-							<option>10일</option>
-							<option>11일</option>
-							<option>12일</option>
-							<option>13일</option>
-							<option>14일</option>
-							<option>15일</option>
-							<option>16일</option>
-							<option>17일</option>
-							<option>18일</option>
-							<option>19일</option>
-							<option>20일</option>
-							<option>21일</option>
-							<option>22일</option>
-							<option>23일</option>
-							<option>24일</option>
-							<option>25일</option>
-							<option>26일</option>
-							<option>27일</option>
-							<option>28일</option>
-							<option>29일</option>
-							<option>30일</option>
-							<option>31일</option>
-						</select>
-					</div>
-				</div>
-				<div class="submit-btn">적용하기</div>
+					<input type="submit" class="submit-btn">
+				</form>
+
 			</div>
 		</div>
 	</div>
