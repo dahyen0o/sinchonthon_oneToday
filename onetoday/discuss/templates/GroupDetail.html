@@ -1,0 +1,89 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>onetoday</title>
+        <link rel="stylesheet" href="{% static 'css/GroupPage.css' %}" />
+    </head>
+    
+<body>
+    <div class="container">
+        <img src="{% static 'img/Background.svg' %}" class="background-img" />
+        <div class="header-container">
+            <img src="{% static 'img/Logo.svg' %}" class="logo-img" />
+            <img src="{% static 'img/Profile.svg' %}" class="profile-img" />
+        </div>
+        <div class="Back-container">
+            <a href="{%url 'myclass' %}">
+                <img src="{% static 'images/Backkey.svg' %}" class="backkey-img"/>
+            </a>
+        </div>
+
+        <!-- 그룹 정보 -->
+        <div class="groupstart-container">
+            <span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
+            <span class="bold-text" style="font-size: 16px;">그룹 이름입니다</span>
+            <div class="detail_tags">
+                <span class="detail_tag">#향수</span>
+                <span class="detail_tag">#비누</span>
+                <span class="detail_tag">#서울</span>
+                <span class="detail_tag">#성수</span>
+                <span class="detail_tag">#6명</span>
+                <br/> <br/>
+                <div class="detail_members">
+                    {%for member in participants.all%}
+                    <div class="detail_member">
+                        <img src="{% static 'img/Woman1.svg' %}" style="margin-bottom: 0px;"/>
+                        <p class="bold-text name">{{member.username}}</p>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+
+        <!-- 그룹게시판 -->
+        <div class="group_board">
+            <div class="title">
+                <span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
+                <span class="bold-text" style="font-size: 16px; margin-top: 5%;">그룹 게시판</span>
+                <a href="GroupPage.html"><span class="more bold-text">more ></span></a>
+            </div>
+            <div>
+                <p class="board_title">게시판 제목입니다. 게시판 제목입니다.</p>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+            <hr/>
+            <div>
+                <p class="board_title">게시판 제목입니다. 게시판 제목입니다.</p>
+                <p class="gray_font" style="font-size: 10px; padding-top: 8px;">서연 &nbsp; 2022-09-14</p>
+            </div>
+        </div>
+        <!-- 클래스 추천 파트 -->
+        <div class="recommendation-container">
+            <span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
+            <span class="bold-text" style="font-size: 16px; margin-top: 5%;">우리 그룹을 위한 원데이 클래스 추천</span>
+        </div>
+        <div class="card_container">
+            {%for rc in filtered_classes%}
+            <div class="class-card" style="margin-left: 20px;">
+                <div class="img-container">
+                    <img src="{%static 'img/ClassImg.png' %}" class="classImg"/>
+                </div>
+                <p class="bold-text" style="font-size: 10px; margin-top: 10px; margin-bottom: 5px;">{{rc.name}}</p>
+                <p style="font-size: 8px;">[{{rc.place}}] 영롱한 탄생석 보석비누 500g 만들기</p>
+                <p class="gray_font">24% <span>5000원</span></p>
+                <p class="bold-text" style="margin-bottom: 10px">38,000원</p>
+                <p class="discount_tag">5% 추가할인</p>
+                <div class="apply">
+                <p class="bold-text apply_button" style="font-size: 8px;">신청하기</p>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+
+    </div>
+</body>
+</html>
