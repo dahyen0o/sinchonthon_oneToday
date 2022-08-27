@@ -18,6 +18,7 @@ def post(request):
         recruit_post.place = request.POST['place']
         recruit_post.category = request.POST['category']
         recruit_post.total_people = request.POST['total_people']
+        recruit_post.participants.add(get_user_model())
         recruit_post.save()
 
         return redirect('mainlist')
@@ -25,10 +26,9 @@ def post(request):
 def detail(request, post_id):
     # 해당 게시글에 지원
     if request.method == 'POST':
-        user = get_user_model()
         recruit_post = get_object_or_404(RecruitPost, pk=post_id)
         recruit_post.curr_people += 1
-        recruit_post.participants.add(user)
+        recruit_post.participants.add(request.user)
         recruit_post.save()
         return redirect('detail', post_id)
     # 해당 게시글 출력

@@ -31,7 +31,7 @@ class RecruitPost(models.Model):
     place = models.CharField(max_length=15, choices=place_list)
     category = models.CharField(max_length=15, choices=category_list)
     total_people = models.IntegerField()
-    curr_people = models.IntegerField(default=0)
+    curr_people = models.IntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     participants = models.ManyToManyField(CustomUser, related_name='participate')
