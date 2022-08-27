@@ -36,12 +36,12 @@ class RecruitPost(models.Model):
     start_date = models.DateField(auto_now_add=True)
     finish_date = models.DateField()
     place = models.CharField(max_length=15, choices=place_list)
-    category = models.CharField(max_length=15, choices=category_list)
+    category = models.CharField(max_length=15, choices=category_list, null=True)
     total_people = models.IntegerField()
     curr_people = models.IntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    participants = models.ManyToManyField(CustomUser, related_name='participate')
+    participants = models.ManyToManyField(CustomUser, related_name='participate', blank=True)
     vote = models.ManyToManyField(Vote, blank=True)
 
     def __str__(self):

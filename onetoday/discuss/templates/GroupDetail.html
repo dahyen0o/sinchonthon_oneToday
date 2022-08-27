@@ -18,7 +18,7 @@
         </div>
         <div class="Back-container">
             <a href="{%url 'myclass' %}">
-                <img src="{% static 'images/Backkey.svg' %}" class="backkey-img"/>
+                <img src="{% static 'img/Backkey.svg' %}" class="backkey-img"/>
             </a>
         </div>
 
@@ -49,7 +49,7 @@
             <div class="title">
                 <span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
                 <span class="bold-text" style="font-size: 16px; margin-top: 5%;">그룹 게시판</span>
-                <a href="GroupPage.html"><span class="more bold-text">more ></span></a>
+                <a href="{% url 'myclass' %}"><span class="more bold-text">more ></span></a>
             </div>
             <div>
                 <p class="board_title">게시판 제목입니다. 게시판 제목입니다.</p>

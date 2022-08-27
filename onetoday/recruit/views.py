@@ -8,6 +8,9 @@ def mainlist(request):
     posts = RecruitPost.objects.filter().order_by('-created_at')
     return render(request, 'MainPage.html', {'posts':posts})
 
+def postform(request):
+    return render(request, 'WritePage.html')
+
 def post(request):
     recruit_post = RecruitPost()
     if request.method == 'POST':
