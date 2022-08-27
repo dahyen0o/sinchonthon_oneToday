@@ -1,7 +1,17 @@
-{% for class in classes %}
+{{ user.username }} 님의 그룹들: <br>
+{% for group in groups %}
 
-{{ class.name }}
+{{ group.title }}<br>
+{{ group.content }}<br>
+{% if group.total_people > group.curr_people %}
+미완료
+{% else %}
+완료
+{% endif %}
+
+
+<hr>
 
 {% endfor %}
 
-{{ user.username }}
+
