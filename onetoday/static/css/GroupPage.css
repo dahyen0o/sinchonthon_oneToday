@@ -1,4 +1,5 @@
 @import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
+
 body {
 	font-family: 'NanumSquare';
 	font-weight: 700;
@@ -45,7 +46,7 @@ body {
 	height: 18px;
 }
 .bold-text {
-	font-weight: 800;
+	font-weight: 1000;
 }
 p {
 	margin: 0;
@@ -57,7 +58,7 @@ p {
 	padding-bottom: 30px;
 }
 .groups {
-	padding: 0 30px;
+	padding: 0 30px;;
 }
 .group-card {
 	background: rgba(255, 255, 255, 0.79);	
@@ -72,10 +73,17 @@ p {
 	font-size: 14px;
 }
 .tag {
-	background-color: #D9D9D9;
-	padding: 0 5px;
-	border-radius: 4px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	background-color: #ECF1FF;
+	padding: 5px 10px;
+	border-radius: 7.5px;
 	font-size: 5px;
+}
+.condition {
+	font-size: 7px;
+	border: 1px solid #ABBDF4;
+	border-radius: 9px;
+	padding: 5px 15px;
 }
 .content {
 	background-color: #D9D9D9;
@@ -85,10 +93,13 @@ p {
 	border-radius: 10px;
 }
 .members-container {
-	padding-top: 5px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
 }
 .member {
-	margin-right: 5px;
+	margin-right: 25px;
 }
 
 
@@ -107,7 +118,7 @@ p {
 	display: flex;
 }
 .detail_member {
-	margin-right: 5px;
+	margin-right: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -116,15 +127,94 @@ p {
 	font-size: 7px;
 }
 
+/* 그룹 게시판 */
+.group_board {
+	padding: 0px 40px;
+	padding-bottom: 30px;	
+}
+.title {
+	margin-bottom: 5%;
+}
+.more {
+	position: absolute;
+	right: 40px;
+	font-size: 12px;
+}
+.board_title {
+	font-size: 12px;
+}
+
 /* 클래스 추천 파트 */
 .recommendation-container {
 	padding: 0px 40px;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
+}
+.card_container {
+	width: 100%;
+  	height: 50%;
+  	margin: 10px 0;
+  	display: flex;
+  	overflow-x: scroll;
+	scroll-behavior: smooth;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+.card_container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }
 .class-card {
+	width: 80%;
+	height: 75%;
 	background: rgba(255, 255, 255, 0.79);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 21px;
-	padding: 8px;
-	margin-bottom: 25px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	margin-right: 20px;
+}
+.img-container{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.classImg{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	-webkit-user-drag: none;
+}
+.gray_font{
+	color: #868686;
+	font-size: 6px;
+	padding-top: 15px;
+}
+.cancel-text {
+	text-decoration: line-through;
+	color: #868686;
+	font-size: 6px;
+}
+.discount_tag{
+	display: inline;
+	color: #FF6464;
+	border: 0.3px solid #FF6464;
+	border-radius: 2px;
+	font-size: 4px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.apply {
+	display: flex;
+	justify-content: center;
+	margin-top: 10%;
+}
+.apply_button{
+	color: #FFFFFF;
+	background-color: #DCB9FF;
+	border-radius: 11px;
+	padding: 8px 50px;
 }
