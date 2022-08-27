@@ -33,7 +33,7 @@ class RecruitPost(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     content = models.TextField(blank=True, null=True)
-    start_date = models.DateField(auto_now_add=True)
+    start_date = models.DateField(default=date.today)
     finish_date = models.DateField()
     place = models.CharField(max_length=15, choices=place_list)
     category = models.CharField(max_length=15, choices=category_list, null=True)

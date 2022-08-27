@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>onetoday</title>
+		<link rel="stylesheet" href="{% static 'css/MainDetailPage.css' %}" />
+	</head>
+	<body>
+		<div class="container">
+			<img src="{% static 'img/Background.svg' %}" class="background-img" />
+			<div class="header-container">
+				<img src="{% static 'img/Logo.svg' %}" class="logo-img" />
+				<img src="{% static 'img/Profile.svg' %}" class="profile-img" />
+			</div>
+			<div class="group-container">
+				<div class="white-box-top"></div>
+				<div class="white-box-top-under"></div>
+				<div class="white-box">
+					<div class="white-box-inner">
+						<div class="title-continer">
+							<div style="display: flex">
+								<div class="title-bar"></div>
+								<div class="title-text">{{ detail.name }}</div>
+							</div>
+						</div>
+						<img
+							class="group-img"
+							src="https://user-images.githubusercontent.com/102040717/187047573-15bff5f7-8d6f-4054-b49a-a28d2fafdcb7.svg"
+						/>
+						<div class="group-detail-text">
+							{{ detail.content }}
+						</div>
+						<div class="filter-container">
+							<div class="filter-btn">
+								<div class="filter-text">{{ detail.start_date }} - {{ detail.finish_date }}</div>
+							</div>
+							<div class="filter-btn">
+								<div class="filter-text">{{ detail.place }}</div>
+							</div>
+							<div class="filter-btn">
+								<div class="filter-text">{{ detail.category }}</div>
+							</div>
+						</div>
+						<div class="tag-container">
+							<div class="tag">#{{ detail.category }}</div>
+							<div class="tag">#{{ detail.place }}</div>
+							<div class="tag">#성동구</div>
+							<div class="tag">#성수</div>
+							<div class="tag">#{{ detail.total_people }}명</div>
+						</div>
+						<div class="submit-btn">
+							<div style="display: flex">
+                                <form action="{% url 'detail' detail.id %}" mesthod="POST">
+                                <button type="submit" class="submit-text">
+								<!-- <div class="submit-text">그룹 참여 신청하기</div> -->
+								<img src="{% static 'img/RequestBtn.svg' %}" class="submit-btn-img" />그룹 참여 신청하기</button>
+                                </form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

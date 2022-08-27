@@ -48,7 +48,7 @@ def detail(request, post_id):
         return redirect('detail', post_id)
     # 해당 게시글 출력
     else:
-        return render(request, 'detail.html', {'detail': get_object_or_404(RecruitPost, pk=post_id)})
+        return render(request, 'MainDetailPage.html', {'detail': get_object_or_404(RecruitPost, pk=post_id)})
 
 # MainMorePage 에서 검색
 def search(request):
