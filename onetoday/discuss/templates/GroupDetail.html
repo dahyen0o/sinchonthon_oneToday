@@ -6,30 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GroupDetail</title>
-    <link rel="stylesheet" href="GroupPage.css" />
+    <link rel="stylesheet" href="{% static 'css/GroupPage.css' %}" />
 
 </head>
 <body>
     <div class="container">
-        <img src="images/Background.svg" class="background-img" />
+        <img src="{% static 'img/Background.svg' %}" class="background-img" />
         <div class="header-container">
-            <img src="images/Logo.svg" class="logo-img" />
-            <img src="images/Profile.svg" class="profile-img" />
+            <img src="{% static 'img/Logo.svg' %}" class="logo-img" />
+            <img src="{% static 'img/Profile.svg' %}" class="profile-img" />
         </div>
         <div class="Back-container">
-            <img src="images/Backkey.svg" class="backkey-img"/>
+            <img src="{% static 'img/Backkey.svg' %}" class="backkey-img"/>
         </div>
 
         <div class="groupstart-container">
-            <p class="bold-text" style="font-size: 16px;">그룹 이름입니다</p>
+            <p class="bold-text" style="font-size: 16px;">{{group.name}}</p>
             <div class="detail_tags">
-                <span class="detail_tag">#향수</span>
-                <span class="detail_tag">#비누</span>
-                <span class="detail_tag">#서울</span>
-                <span class="detail_tag">#성수</span>
-                <span class="detail_tag">#6명</span>
+                <span class="detail_tag">#{{group.category}}</span>
+                <span class="detail_tag">#{{group.category}}</span>
+                <span class="detail_tag">#{{group.place}}</span>
+                <span class="detail_tag">#{{group.place}}</span>
+                <span class="detail_tag">#{{group.total_people}}</span>
                 <br/> <br/>
                 <div class="detail_members">
+
                     <div class="detail_member">
                         <img src="images/Woman1.svg" style="margin-bottom: 0px;"/>
                         <p class="bold-text name">서연</p>
@@ -62,9 +63,12 @@
         <!--  -->
         <div class="recommendation-container">
             <p class="bold-text" style="font-size: 16px; margin-top: 10%;">우리 그룹을 위한 원데이 클래스 추천</p>
+            {% for class in filtered_classes %}
             <div class="class-card">
-                <img src="images/ClassImg.png"/>
+                {{class.name}}
+                <img src="{% static 'img/ClassImg.png' %}"/>
             </div>
+            {% endfor %}
         </div>
 
     </div>
