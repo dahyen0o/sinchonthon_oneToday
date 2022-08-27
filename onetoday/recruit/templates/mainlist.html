@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>oneToday</title>
+</head>
+
+<body>
+    
+    {% for post in posts %}
+    <div>
+        {{ post.name }}
+        {{ post.start_date }}
+    </div>
+    {% endfor %}
+
+    <div>
+        <form action="{% url 'mainlist' %}" mesthod="POST">
+            {% csrf_token %}
+            그룹 이름 <input id="name" type="text">
+            내용 <input id="content" type="text">
+            시작 날짜 <input id="start_date" type="date">
+            종료 날짜 <input id="start_date" type="date">
+            장소 
+            <div>
+                <input id="place" type="checkbox" value="마포구">
+                <input id="place" type="checkbox" value="강남구">
+                <input id="place" type="checkbox" value="용산구">
+                <input id="place" type="checkbox" value="종로구">
+                <input id="place" type="checkbox" value="성동구">
+                <input id="place" type="checkbox" value="중구">
+                <input id="place" type="checkbox" value="서대문구">
+                <input id="place" type="checkbox" value="송파구">
+            </div>
+            <button type="submit">등록</button>
+        </form>
+    </div>
+    
+</body>

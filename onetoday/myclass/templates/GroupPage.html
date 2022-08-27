@@ -19,6 +19,7 @@
 				<img src="images/Backkey.svg" class="backkey-img"/>
 			</div>
 
+<<<<<<< HEAD
 			<div class="groupstart-container">
 				<span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
 				<span><span class="bold-text">이서연</span>님의 그룹</span>
@@ -139,4 +140,80 @@
 		</div>
 		<script src="GroupPage"></script>
 	</body>
+=======
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>GroupPage</title>
+	<link rel="stylesheet" href="{% static 'css/GroupPage.css' %}" />
+</head>
+
+<body>
+	<div class="container">
+		<img src="{% static 'img/Background.svg' %}" class="background-img" />
+		<div class="header-container">
+			<a href="{% url 'mainlist' %}"><img src="{% static 'img/Logo.svg' %}" class="logo-img" /></a>
+			<img src="{% static 'img/Profile.svg' %}" class="profile-img" />
+		</div>
+		<div class="Back-container">
+			<img src="{% static 'img/Backkey.svg' %}" class="backkey-img" />
+		</div>
+
+		<div class="groupstart-container">
+			<span style="background-color: #FFFFFF; margin-right: 5px; width: 10px">&nbsp;</span>
+			<span><span class="bold-text">{{ user.username }}</span>님의 그룹</span>
+		</div>
+		<div class="groups">
+			{% for group in groups %}
+			<a href="{% url 'recommend' group.id %}" style="text-decoration: none;">
+				<div class="group-card">
+					<p class="bold-text group-name">{{group.name}}</p>
+					<div class="tags">
+						<span class="tag">#{{group.category}}</span>
+						<span class="tag">#{{group.category}}</span>
+						<span class="tag">#{{group.place}}</span>
+						<span class="tag">#{{group.place}}</span>
+						<span class="tag">#{{group.total_people}}명</span>
+						<br />
+						<br />
+						<span class="condition">{{group.start_date}} - {{group.finish_date}}</span>
+						<span class="condition">{{group.place}}</span>
+						<span class="condition">{{group.category}}</span>
+						<div class="members-container">
+							<div class="detail_member">
+								<img src="{% static 'img/Woman1.svg' %}" style="margin-bottom: 0px;" />
+								<p class="bold-text name">거은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Woman2.svg' %}" />
+								<p class="bold-text name">나은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Man1.svg' %}" />
+								<p class="bold-text name">다은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Woman3.svg' %}" />
+								<p class="bold-text name">라은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Man1.svg' %}" />
+								<p class="bold-text name">다은</p>
+							</div>
+							<div class="detail_member">
+								<img src="{% static 'img/Woman2.svg' %}" />
+								<p class="bold-text name">라은</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+
+>>>>>>> c3caa290059a941eeab2c75f36f0f3355f2f7c79
 </html>
