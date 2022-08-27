@@ -1,5 +1,3 @@
-from tkinter.tix import Balloon
-from unicodedata import category
 from django.db import models
 from account.models import CustomUser
 
@@ -16,9 +14,6 @@ class RecruitPost(models.Model):
     curr_people = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-    def upload(self):
-        self.save()
 
     def __str__(self):
         return self.title

@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from account import views as account_views
+from discuss import views as discuss_views
+from myclass import views as myclass_views
+from recruit import views as recruit_views
 
 from discuss.views import *
 
