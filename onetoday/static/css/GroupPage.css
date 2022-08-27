@@ -5,6 +5,7 @@ body {
 	font-weight: 700;
 	font-size: 15px;
 }
+
 .container {
 	width: 100vw;
 	height: 100vh;
@@ -14,6 +15,7 @@ body {
 	position: absolute;
 	overflow: hidden;
 }
+
 .background-img {
 	width: 100%;
 	height: 100%;
@@ -21,16 +23,19 @@ body {
 	position: absolute;
 	z-index: -10;
 }
+
 .header-container {
 	padding: 0 20px;
 	padding-top: 50px;
 	display: flex;
 	justify-content: space-between;
 }
+
 .logo-img {
 	width: 100px;
 	height: 50px;
 }
+
 .profile-img {
 	width: 28px;
 	height: 28px;
@@ -45,33 +50,41 @@ body {
 	width: 28px;
 	height: 18px;
 }
+
 .bold-text {
 	font-weight: 1000;
 }
+
 p {
 	margin: 0;
 }
+
 /* 그룹별 카드 */
 .groupstart-container {
 	width: 100%;
 	padding: 0px 40px;
 	padding-bottom: 30px;
 }
+
 .groups {
-	padding: 0 30px;;
+	padding: 0 30px;
+	;
 }
+
 .group-card {
-	background: rgba(255, 255, 255, 0.79);	
+	background: rgba(255, 255, 255, 0.79);
 	padding: 8px 20px;
 	margin-bottom: 25px;
-	border-radius: 21px;	
+	border-radius: 21px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.group-name{
+
+.group-name {
 	padding-top: 10px;
 	padding-bottom: 8px;
 	font-size: 14px;
 }
+
 .tag {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 	background-color: #ECF1FF;
@@ -79,12 +92,14 @@ p {
 	border-radius: 7.5px;
 	font-size: 5px;
 }
+
 .condition {
 	font-size: 7px;
 	border: 1px solid #ABBDF4;
 	border-radius: 9px;
 	padding: 5px 15px;
 }
+
 .content {
 	background-color: #D9D9D9;
 	padding: 0 5px;
@@ -92,12 +107,14 @@ p {
 	margin-bottom: 5px;
 	border-radius: 10px;
 }
+
 .members-container {
 	padding-top: 15px;
 	padding-bottom: 5px;
 	display: flex;
 	justify-content: space-between;
 }
+
 .member {
 	margin-right: 25px;
 }
@@ -107,6 +124,7 @@ p {
 .detail_tags {
 	padding-top: 20px;
 }
+
 .detail_tag {
 	margin-right: 5px;
 	background-color: rgba(255, 255, 255, 0.6);
@@ -114,32 +132,44 @@ p {
 	border-radius: 7.5px;
 	font-size: 7px;
 }
+
 .detail_members {
 	display: flex;
 }
+
 .detail_member {
 	margin-right: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+
 .name {
 	font-size: 7px;
 }
 
 /* 그룹 게시판 */
+hr {
+	color: #BEBEBE;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
 .group_board {
 	padding: 0px 40px;
-	padding-bottom: 30px;	
+	padding-bottom: 30px;
 }
+
 .title {
 	margin-bottom: 5%;
 }
+
 .more {
 	position: absolute;
 	right: 40px;
 	font-size: 12px;
 }
+
 .board_title {
 	font-size: 12px;
 }
@@ -149,19 +179,23 @@ p {
 	padding: 0px 40px;
 	padding-bottom: 10px;
 }
+
 .card_container {
 	width: 100%;
-  	height: 50%;
-  	margin: 10px 0;
-  	display: flex;
-  	overflow-x: scroll;
+	height: 50%;
+	margin: 10px 0;
+	display: flex;
+	overflow-x: scroll;
 	scroll-behavior: smooth;
 	overflow-y: hidden;
 	white-space: nowrap;
 }
+
 .card_container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+	display: none;
+	/* Chrome, Safari, Opera*/
 }
+
 .class-card {
 	width: 80%;
 	height: 75%;
@@ -174,29 +208,34 @@ p {
 	padding-bottom: 10px;
 	margin-right: 20px;
 }
-.img-container{
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  flex-shrink: 0;
+
+.img-container {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	flex-shrink: 0;
 }
-.classImg{
+
+.classImg {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	-webkit-user-drag: none;
 }
-.gray_font{
+
+.gray_font {
 	color: #868686;
 	font-size: 6px;
 	padding-top: 15px;
 }
+
 .cancel-text {
 	text-decoration: line-through;
 	color: #868686;
 	font-size: 6px;
 }
-.discount_tag{
+
+.discount_tag {
 	display: inline;
 	color: #FF6464;
 	border: 0.3px solid #FF6464;
@@ -207,14 +246,61 @@ p {
 	padding-left: 3px;
 	padding-right: 3px;
 }
+
 .apply {
 	display: flex;
 	justify-content: center;
 	margin-top: 10%;
 }
-.apply_button{
+
+.apply_button {
 	color: #FFFFFF;
 	background-color: #DCB9FF;
 	border-radius: 11px;
 	padding: 8px 50px;
+}
+
+
+/* 그룹게시판: 게시물 상세 페이지 */
+.posting_card {
+	background-color: rgba(255, 255, 255, 0.79);
+	padding: 25px 28px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 21px;
+	margin-top: 20%;
+}
+
+.posting_content {
+	margin-top: 10%;
+	font-size: 10px;
+}
+
+.comment {
+	display: flex;
+	margin-top: 10%;
+}
+
+.comment_profile {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.comment_content {
+	position: absolute;
+	font-size: 7px;
+	top: 40%;
+	left: 15%;
+	transform: translate(-5%, -50%);
+}
+
+.bubble_container {
+	position: relative;
+	width: 100%;
+
+}
+
+.img_div {
+	vertical-align: middle;
 }
