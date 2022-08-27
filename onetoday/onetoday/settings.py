@@ -14,6 +14,9 @@ from pathlib import Path
 
 AUTH_USER_MODEL = 'account.CustomUser'
 
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,6 +45,8 @@ INSTALLED_APPS = [
     'discuss',
     'myclass',
     'recruit',
+
+    'mathfilters',
 ]
 
 MIDDLEWARE = [

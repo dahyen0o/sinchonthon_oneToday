@@ -1,3 +1,4 @@
+{% load mathfilters %}
 {{ user.username }} 님의 그룹들: <br>
 {% for group in groups %}
 
@@ -10,6 +11,9 @@
 {% endif %}
 
 
+
+<br>
+{{ group.total_people|sub:group.curr_people }}명이 더 필요해요
 <hr>
 
 {% endfor %}
