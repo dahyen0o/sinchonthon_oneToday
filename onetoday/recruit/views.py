@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import get_user_model
 from .models import *
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_protect 
 
 # Create your views here.
 def mainlist(request):
@@ -11,18 +12,19 @@ def mainlist(request):
 def postform(request):
     return render(request, 'WritePage.html')
 
+@csrf_protect
 def post(request):
     recruit_post = RecruitPost()
     if request.method == 'POST':
-        recruit_post.user = get_user_model()
-        recruit_post.name = request.POST['name']
-        recruit_post.content = request.POST['content']
-        recruit_post.start_date = request.POST['start_date']
-        recruit_post.finish_date = request.POST['finish_date']
-        recruit_post.place = request.POST['place']
-        recruit_post.category = request.POST['category']
-        recruit_post.total_people = request.POST['total_people']
-        recruit_post.participants.add(get_user_model())
+        recruit_post.user = request.user
+        recruit_post.name = request.POST.get('name')
+        recruit_post.content = request.POST.get('content')
+        recruit_post.start_date = request.POST.get('start_date')
+        recruit_post.finish_date = datetime.now + datetime.month
+        recruit_post.place = request.POST.get('place')
+        recruit_post.category = request.POST.get('category')
+        recruit_post.total_people = request.POST.get('total_people')
+        #recruit_post.participants.add(get_user_model())
 
         start_date = recruit_post.start_date
         finish_date = recruit_post.finish_date
