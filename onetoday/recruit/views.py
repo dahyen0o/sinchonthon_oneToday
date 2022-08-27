@@ -5,7 +5,7 @@ from .models import *
 # Create your views here.
 def mainlist(request):
     posts = RecruitPost.objects.filter().order_by('-created_at')
-    return render(request, 'mainlist.html', {'posts':posts})
+    return render(request, 'MainPage.html', {'posts':posts})
 
 def post(request):
     recruit_post = RecruitPost()
