@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>onetoday</title>
+	<link rel="stylesheet" href="{% static 'css/MainPage.css' %}" />
+</head>
+
+<body>
+	<div class="container">
+		<img src="{% static 'img/Background.svg' %}" class="background-img" />
+		<div class="header-container">
+			<img src="{% static 'img/Logo.svg' %}" class="logo-img" />
+			<img src="{% static 'img/LogoLine.svg' %}" class="logo-line-img" />
+		</div>
+		<div class="btn-container">
+			<div>
+				<a href="{% url 'myclass' %}">
+					<img src="{% static 'img/MainBtn.svg' %}" class="btn-img" />
+					<div class="btn-text">내 그룹</div>
+				</a>
+			</div>
+			<div>
+				<img src="{% static 'img/MainBtn.svg' %}" class="btn-img" />
+				<div class="btn-text btn-text1">그룹 모집</div>
+			</div>
+		</div>
+		<div class="group-container">
+			<div class="white-box-top"></div>
+			<div class="white-box-top-under"></div>
+			<div class="white-box">
+				<div>
+					<div class="title-continer">
+						<div style="display: flex; width: 150px">
+							<div class="title-bar"></div>
+							<div class="title-text">Today new group</div>
+						</div>
+						<a href="MainMorePage.html">
+							<div class="more-text">more ></div>
+						</a>
+					</div>
+					<div class="group-wrapper">
+						{% for post in posts %}
+						<a href="{% url 'detail' post.id %}">
+							<div class="group-box">
+								<div class="inner">
+									<div class="group-img-container"></div>
+									<div class="group-text-container">
+										<div class="group-title-text">{{post.name}}</div>
+										<div class="group-title-arrow">></div>
+										<div class="tag-container">
+											<div class="tag">#{{post.category}}</div>
+											<div class="tag">#{{post.place}}</div>
+										</div>
+										<div style="display: flex">
+											<img src="{% static 'img/GroupCalendar.svg' %}" class="calendar-img" />
+											<div class="group-date-text">{{post.start_date}} - {{post.finish_date}}
+											</div>
+										</div>
+										<div style="margin-top: 7px; display: flex">
+											<div>
+												<img src="{% static 'img/Profile1.svg' %}" class="group-profile-img" />
+												<img src="{% static 'img/Profile2.svg' %}" class="group-profile-img" />
+												<img src="{% static 'img/Profile3.svg' %}" class="group-profile-img" />
+												<img src="{% static 'img/Profile4.svg' %}" class="group-profile-img" />
+											</div>
+											<div class="group-dot-container">
+												<div class="dot-container">
+													<div class="group-dot"></div>
+													<div class="group-dot"></div>
+													<div class="group-dot"></div>
+												</div>
+												<span
+													class="group-dot-text">({{post.curr_people}}/{{post.total_people}})</span>
+											</div>
+										</div>
+										<div class="request-btn">
+											<div class="request-btn-text">그룹 참여 신청하기</div>
+											<img src="{% static 'img/RequestBtn.svg' %}" class="request-btn-img" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+</body>
+
+</html>
