@@ -19,6 +19,15 @@ def post(request):
         recruit_post.category = request.POST['category']
         recruit_post.total_people = request.POST['total_people']
         recruit_post.participants.add(get_user_model())
+
+        start_date = recruit_post.start_date
+        finish_date = recruit_post.finish_date
+        recommend_class = Class.objects.filter(type=recruit_post.category, place=recruit_post.place).filter(date__range=[start_date, finish_date])
+
+        for rc in recommend_class:
+            vote = Vote.objects.create(recommend_class=rc)
+            recruit_post.vote.add(vote)
+
         recruit_post.save()
 
         return redirect('mainlist')

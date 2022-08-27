@@ -19,8 +19,8 @@ from account import views as account_views
 from discuss import views as discuss_views
 from myclass import views as myclass_views
 from recruit import views as recruit_views
-from discuss import views as discuss_views
 
+from discuss.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
