@@ -8,7 +8,7 @@ body {
 
 .container {
 	width: 100vw;
-	height: 100vh;
+	height: auto;
 	margin: 0;
 	top: 0;
 	left: 0;
@@ -84,7 +84,6 @@ p {
 	padding-bottom: 8px;
 	font-size: 14px;
 }
-
 .tag {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 	background-color: #ECF1FF;
@@ -92,12 +91,18 @@ p {
 	border-radius: 7.5px;
 	font-size: 5px;
 }
-
+.conditions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+}
 .condition {
 	font-size: 7px;
 	border: 1px solid #ABBDF4;
 	border-radius: 9px;
 	padding: 5px 15px;
+	margin-right: 10px;
+	margin-bottom: 5px;
 }
 
 .content {
@@ -205,7 +210,7 @@ hr {
 	padding-right: 20px;
 	padding-left: 20px;
 	padding-top: 15px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	margin-right: 20px;
 }
 
