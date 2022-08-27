@@ -13,5 +13,12 @@ def recommend(request, pk):
     finish_date = group.finish_date
     classes = Class.objects.filter(type=group.category, place=group.place).filter(date__range=[start_date, finish_date])
 
-    return render(request, 'hy.html', {'classes' : classes})
+    return render(request, 'hy.html', {'filtered_classes' : classes, 'group': group})
 
+
+def poll(request, gr_pk, cl_pk):
+    group = get_object_or_404(RecruitPost, pk=gr_pk)
+    votes = group.vote.get(pk=cl_pk)
+    if votes.vote_user.contain(request.user):
+        votes.vote_user.add(request.user)
+    return redirect('recommend', gr_pk)

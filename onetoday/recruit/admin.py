@@ -3,4 +3,8 @@ from .models import *
 
 admin.site.register(RecruitPost)
 
-# Register your models here.
+@admin.register(Vote)
+class DayAdmin(admin.ModelAdmin):
+	list_display = ['id']
+	list_display_links = ['id']
+
