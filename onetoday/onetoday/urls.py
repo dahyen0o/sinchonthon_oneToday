@@ -24,6 +24,11 @@ from discuss.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', recruit_views.mainlist, name='mainlist'),
+    path('recruit_post/', recruit_views.post, name='post'),
+    path('recruit_detail/<int:post_id>', recruit_views.detail, name='detail'),
+
     path('discuss/<int:pk>', recommend, name='recommend'),
     path('poll/<int:gr_pk>/<int:cl_pk>', poll, name='poll'),
 ]

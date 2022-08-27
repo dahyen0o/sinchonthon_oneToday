@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from django.db import models
 from account.models import CustomUser
 from myclass.models import *
@@ -25,7 +24,7 @@ class RecruitPost(models.Model):
     }
 
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    title = models.CharField(max_length=30)
+    name = models.CharField(max_length=30)
     content = models.TextField(blank=True, null=True)
     start_date = models.DateField()
     finish_date = models.DateField()
@@ -35,7 +34,8 @@ class RecruitPost(models.Model):
     curr_people = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    participants = models.ManyToManyField(CustomUser, related_name='participate')
     vote = models.ManyToManyField(Vote, blank=True)
 
     def __str__(self):
-        return self.title
+        return self.name
