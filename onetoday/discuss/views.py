@@ -11,7 +11,7 @@ def recommend(request, pk):
     group = get_object_or_404(RecruitPost, pk=pk)
     start_date = group.start_date
     finish_date = group.finish_date
-    classes = Class.objects.filter(type=group.category, place=group.place).filter(date_range=[start_date, finish_date])
+    classes = Class.objects.filter(type=group.category, place=group.place).filter(date__range=[start_date, finish_date])
 
-    return render(request, 'hyunyoung.html', {'classes' : classes})
+    return render(request, 'hy.html', {'classes' : classes})
 
