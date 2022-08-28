@@ -53,10 +53,12 @@
 						</div>
 						<div class="submit-btn">
 							<div style="display: flex">
-                                <form action="{% url 'detail' detail.id %}" mesthod="POST">
-                                <button type="submit" class="submit-text">
-								<!-- <div class="submit-text">그룹 참여 신청하기</div> -->
-								<img src="{% static 'img/RequestBtn.svg' %}" class="submit-btn-img" />그룹 참여 신청하기</button>
+                                <form action="{% url 'detail' detail.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit">그룹 참여 신청하기
+                                    <!-- <div class="submit-text">그룹 참여 신청하기</div> -->
+                                    <!-- <img src="{% static 'img/RequestBtn.svg' %}" class="submit-btn-img" />그룹 참여 신청하기 -->
+                                    </button>
                                 </form>
 							</div>
 						</div>

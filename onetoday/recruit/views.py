@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import get_user_model
+
 from .models import *
+from myclass import views
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_protect 
 
@@ -21,7 +23,6 @@ def post(request):
     if request.method == 'POST':
         recruit_post.user = request.user
         recruit_post.name = request.POST.get('name')
-        print(recruit_post.name)
         recruit_post.content = request.POST.get('content')
         recruit_post.start_date = request.POST.get('start_date')
         recruit_post.finish_date = datetime.today() + relativedelta(months=1)
@@ -44,15 +45,15 @@ def post(request):
     
 def detail(request, post_id):
     # 해당 게시글에 지원
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render(request, 'MainDetailPage.html', {'detail': get_object_or_404(RecruitPost, pk=post_id)})
+    # 해당 게시글 출력
+    else:
         recruit_post = get_object_or_404(RecruitPost, pk=post_id)
         recruit_post.curr_people += 1
         recruit_post.participants.add(request.user)
         recruit_post.save()
-        return redirect('detail', post_id)
-    # 해당 게시글 출력
-    else:
-        return render(request, 'MainDetailPage.html', {'detail': get_object_or_404(RecruitPost, pk=post_id)})
+        return redirect('myclass')
 
 # MainMorePage 에서 검색
 def search(request):
