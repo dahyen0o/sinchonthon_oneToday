@@ -22,6 +22,9 @@ from recruit import views as recruit_views
 
 from discuss.views import *
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', recruit_views.mainlist, name='mainlist'),
@@ -39,4 +42,4 @@ urlpatterns = [
     path('myclass/', myclass_views.myclass, name='myclass'),
 
     path('postform/',recruit_views.postform, name='postform'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

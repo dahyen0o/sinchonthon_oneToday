@@ -25,6 +25,7 @@ class Class(models.Model):
     date = models.DateField(default=date.today)
     place = models.CharField(max_length=200, choices=place_list)
     name = models.CharField(max_length=200)
+    image = models.ImageField(blank=True, null=True, upload_to="blog_photo")
 
     def __str__(self):
         return self.name

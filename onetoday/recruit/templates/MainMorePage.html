@@ -14,7 +14,8 @@
 	<div class="container">
 		<img src="{% static 'img/Background.svg' %}" class="background-img" />
 		<div class="header-container">
-			<img src="{% static 'img/Logo.svg' %}" class="logo-img" />
+			<a href="{% url 'mainlist' %}">
+				<img src="{% static 'img/Logo.svg' %}" class="logo-img" /></a>
 			<img src="{% static 'img/LogoLine.svg' %}" class="profile-img" />
 		</div>
 		<div class="group-container">
@@ -39,7 +40,10 @@
 					<a href="{% url 'detail' post.id %}">
 						<div class="group-box">
 							<div class="inner">
-								<div class="group-img-container"></div>
+								<div class="group-img-container">{% if post.image %}<img style="width: 100%;
+								height: 100%;
+								object-fit: cover;
+								-webkit-user-drag: none;" src="{{post.image.url}}">{%endif%}</div>
 								<div class="group-text-container">
 									<div class="group-title-text">{{post.name}}</div>
 									<div class="group-title-arrow">></div>
@@ -102,7 +106,7 @@
 									<img src="{% static 'img/hobby/Hobby1.svg' %}" class="hobby-img" />
 								</div>
 								<input type="checkbox" name="category_list" value="요리">
-								<div class="hobby-text" >요리</div>
+								<div class="hobby-text">요리</div>
 							</div>
 							<div>
 								<div class="hobby-circle">

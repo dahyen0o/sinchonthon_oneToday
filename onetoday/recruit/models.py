@@ -43,6 +43,7 @@ class RecruitPost(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     participants = models.ManyToManyField(CustomUser, related_name='participate', blank=True)
     vote = models.ManyToManyField(Vote, blank=True)
+    image = models.ImageField(blank=True, null=True, upload_to="blog_photo")
 
     def __str__(self):
         return self.name

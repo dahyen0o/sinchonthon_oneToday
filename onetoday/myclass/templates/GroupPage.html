@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container" style="height: 100vh;">
 		<img src="{% static 'img/Background.svg' %}" class="background-img" />
 		<div class="header-container">
 			<a href="{% url 'mainlist' %}"><img src="{% static 'img/Logo.svg' %}" class="logo-img" /></a>
@@ -41,9 +41,11 @@
 						<span class="tag">#{{group.total_people}}명</span>
 						<br />
 						<br />
+						<div class="conditions">
 						<span class="condition">{{group.start_date}} - {{group.finish_date}}</span>
 						<span class="condition">{{group.place}}</span>
 						<span class="condition">{{group.category}}</span>
+						</div>
 						<div class="members-container">
 							{%for member in group.participants.all%}
 							<div class="detail_member">
