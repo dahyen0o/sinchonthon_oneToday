@@ -36,7 +36,7 @@
                 <div class="detail_members">
                     {%for member in participants.all%}
                     <div class="detail_member">
-                        <img src="{% static 'img/Woman1.svg' %}" style="margin-bottom: 0px;"/>
+                        {%if photo.image%}<img src="{{photo.image.url}}" style="margin-bottom: 0px;"/>{%endif%}
                         <p class="bold-text name">{{member.username}}</p>
                     </div>
                     {%endfor%}

@@ -50,10 +50,13 @@
 						<a href="{% url 'detail' post.id %}">
 							<div class="group-box">
 								<div class="inner">
-									<div class="group-img-container"></div>
+									<div class="group-img-container">{% if post.image %}<img style="width: 100%;
+										height: 100%;
+										object-fit: cover;
+										-webkit-user-drag: none;" src="{{post.image.url}}">{%endif%}</div>
 									<div class="group-text-container">
 										<div class="group-title-text">{{post.name}}</div>
-										<div class="group-title-arrow">></div>
+										<div class="group-title-arrow"></div>
 										<div class="tag-container">
 											<div class="tag">#{{post.category}}</div>
 											<div class="tag">#{{post.place}}</div>
